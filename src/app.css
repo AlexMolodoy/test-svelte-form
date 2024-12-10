@@ -1,3 +1,32 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('/src/fonts/Gilroy-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	src: url('/src/fonts/Gilroy-Light.ttf') format('truetype');
+	font-weight: lighter;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	src: url('/src/fonts/Gilroy-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	src: url('/src/fonts/Gilroy-Medium.ttf') format('truetype');
+	font-weight: medium;
+	font-style: normal;
+}
+
+:root {
+	font-family: 'Gilroy';
+}
