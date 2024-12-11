@@ -37,4 +37,6 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
-https://dribbble.com/shots/24586399-Register-Form?utm_source=Clipboard_Shot&utm_campaign=seraphinbrice&utm_content=Register+Form&utm_medium=Social_Share&utm_source=Pinterest_Shot&utm_campaign=seraphinbrice&utm_content=Register+Form&utm_medium=Social_Share
+## Project deployed
+
+> project deployed on vercel - https://test-svelte-form-jet.vercel.app/

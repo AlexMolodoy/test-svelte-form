@@ -32,7 +32,7 @@
 
 		const formattedMainPart = mainPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-		return `${formattedMainPart}.${decimalPart} ${countries[country] || ''}`;
+		return `${formattedMainPart}${numericValue.length ? '.' : ''}${decimalPart} ${numericValue.length ? countries[country] || '$' : ''}`;
 	}
 
 	function handleInput(event: Event) {
@@ -51,7 +51,7 @@
 		<form onsubmit={handleSubmit}>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
 				<div>
-					<label class="block mb-2 font-semibold text-gray-800" for="firstName">First Name</label>
+					<label class="mb-2 font-semibold text-gray-800" for="firstName">First Name</label>
 					<input
 						disabled={disableForm}
 						type="text"
@@ -64,7 +64,7 @@
 				</div>
 
 				<div>
-					<label class="block mb-2 font-semibold text-gray-800" for="lastName">Last Name</label>
+					<label class="mb-2 font-semibold text-gray-800" for="lastName">Last Name</label>
 					<input
 						disabled={disableForm}
 						type="text"
@@ -79,8 +79,7 @@
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
 				<div>
-					<label class="block mb-2 font-semibold text-gray-800" for="birthDate">Date of Birth</label
-					>
+					<label class="mb-2 font-semibold text-gray-800" for="birthDate">Date of Birth</label>
 					<input
 						disabled={disableForm}
 						type="date"
@@ -92,7 +91,7 @@
 				</div>
 
 				<div>
-					<label class="block mb-2 font-semibold text-gray-800" for="country">Country</label>
+					<label class="mb-2 font-semibold text-gray-800" for="country">Country</label>
 					<select
 						disabled={disableForm}
 						id="country"
@@ -122,7 +121,7 @@
 
 			{#if showMaxTransfer}
 				<div class="mb-4 h-[78px]">
-					<label class="block mb-2 font-semibold text-gray-800" for="transferAmount"
+					<label class="mb-2 font-semibold text-gray-800" for="transferAmount"
 						>Max Transfer Amount</label
 					>
 					<input
@@ -131,7 +130,7 @@
 						id="transferAmount"
 						bind:value
 						oninput={handleInput}
-						placeholder="0.00{countries[country] || ''}"
+						placeholder="0.00 {countries[country] || ''}"
 						class="w-full p-3 border border-gray-300 rounded-lg"
 					/>
 				</div>
@@ -157,7 +156,14 @@
 		width: 100%;
 		padding: 10px;
 		border: 1px solid #ccc;
+		color: black;
 		border-radius: 8px;
 		font-size: 1rem;
+	}
+
+	input[type='text']:disabled,
+	input[type='date']:disabled,
+	select:disabled {
+		background-color: gray;
 	}
 </style>
